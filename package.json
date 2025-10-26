@@ -1,0 +1,24 @@
+{
+  "name": "myapp",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "turbo run format",
+    "test": "turbo run test",
+    "migrate:latest": "turbo migrate:latest",
+    "migrate:make": "turbo migrate:make",
+    "check-types": "turbo run check-types"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.4",
+    "typescript": "5.8.2",
+    "eslint": "^9.29.0",
+    "prettier": "^3.6.0"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=22"
+  }
+}

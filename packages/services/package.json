@@ -1,0 +1,24 @@
+{
+  "name": "@myapp/services",
+  "version": "0.0.0",
+  "private": true,
+  "description": "myapp Services",
+  "exports": {
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write '**/*.{ts,tsx,md,json,html,yml}'"
+  },
+  "dependencies": {
+    "@myapp/database": "workspace:*",
+    "kysely": "^0.28.2",
+    "pg": "^8.16.3",
+    "inversify": "^7.10.3"
+  },
+  "devDependencies": {
+    "@myapp/typescript-config": "workspace:*",
+    "@types/node": "^22.15.3",
+    "@types/pg": "^8.15.4"
+  }
+}

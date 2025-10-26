@@ -1,0 +1,20 @@
+{
+  "name": "@myapp/database",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "migrate:latest": "kysely migrate:latest"
+  },
+  "exports": {
+    ".": "./src/database.ts"
+  },
+  "devDependencies": {
+    "@next/env": "^15.3.4",
+    "@types/pg": "^8.15.4",
+    "dotenv": "^17.0.0",
+    "kysely": "^0.28.2",
+    "kysely-ctl": "^0.13.1",
+    "pg": "^8.16.3"
+  }
+}

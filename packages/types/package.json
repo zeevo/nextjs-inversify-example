@@ -1,0 +1,10 @@
+{
+  "name": "@myapp/types",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Types",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts"
+  }
+}
