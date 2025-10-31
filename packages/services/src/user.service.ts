@@ -1,28 +1,26 @@
-import { injectable } from "inversify";
-import { DatabaseService } from "./database.service";
+import { Database } from "@myapp/database";
+import { inject, injectable } from "inversify";
+import { DB } from "./db.service";
+import { Kysely } from "kysely";
 
 @injectable()
 export class UserService {
-  constructor(private database: DatabaseService) {}
+  constructor(@inject(DB) private db: Kysely<Database>) {}
 
-  async readAll() {
-    return await this.database.db
-      .selectFrom("user")
-      .orderBy("name", "desc")
-      .select("id")
-      .select("name")
-      .select("email")
+  async getRoles(id: string) {
+    const roles = await this.db
+      .selectFrom("user_role")
+      .where("user_id", "=", id)
+      .select("role")
       .execute();
+
+    return roles.map(({ role }) => role);
   }
 
-  async getUser(id: string) {
-    return await this.database.db
-      .selectFrom("user")
-      .where("id", "=", id)
-      .orderBy("name", "desc")
-      .select("id")
-      .select("name")
-      .select("email")
+  async addRole(userId: string, role: string) {
+    await this.db
+      .insertInto("user_role")
+      .values({ user_id: userId, role })
       .execute();
   }
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { authClient } from "@myapp/auth/auth-client";
+import { redirect } from "next/navigation";
 import { toast } from "sonner";
 
 export async function signUp() {
@@ -18,13 +19,14 @@ export async function signUp() {
       onSuccess: (ctx) => {
         console.log(ctx.data);
         toast("Successfully signed up");
+        redirect("/");
         //redirect to the dashboard or sign in page
       },
       onError: (ctx) => {
         // display the error message
         alert(ctx.error.message);
       },
-    },
+    }
   );
 }
 

@@ -27,6 +27,11 @@
       "cache": false,
       "persistent": false,
       "interactive": false
+    },
+    "migrate:make": {
+      "cache": false,
+      "persistent": false,
+      "interactive": true
     }
   },
   "globalEnv": ["DATABASE_URL"]

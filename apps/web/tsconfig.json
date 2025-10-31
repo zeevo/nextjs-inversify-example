@@ -5,8 +5,7 @@
     "emitDecoratorMetadata": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@myapp/ui/*": ["../../packages/ui/src/*"]
+      "@/*": ["./src/*"]
     },
     "plugins": [
       {

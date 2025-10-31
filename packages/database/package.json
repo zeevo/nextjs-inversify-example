@@ -4,7 +4,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "migrate:latest": "kysely migrate:latest"
+    "migrate:latest": "kysely migrate:latest",
+    "migrate:make": "kysely migrate:make"
   },
   "exports": {
     ".": "./src/database.ts"

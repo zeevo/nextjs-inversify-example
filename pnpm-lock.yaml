@@ -105,6 +105,9 @@ importers:
       inversify:
         specifier: ^7.10.3
         version: 7.10.3(reflect-metadata@0.2.2)
+      kysely:
+        specifier: ^0.28.2
+        version: 0.28.8
       lucide-react:
         specifier: ^0.475.0
         version: 0.475.0(react@19.2.0)
@@ -242,9 +245,6 @@ importers:
       kysely:
         specifier: ^0.28.2
         version: 0.28.8
-      pg:
-        specifier: ^8.16.3
-        version: 8.16.3
     devDependencies:
       '@myapp/typescript-config':
         specifier: workspace:*

@@ -13,7 +13,6 @@
   "dependencies": {
     "@myapp/database": "workspace:*",
     "kysely": "^0.28.2",
-    "pg": "^8.16.3",
     "inversify": "^7.10.3"
   },
   "devDependencies": {

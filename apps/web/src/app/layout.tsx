@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { ThemeProvider } from "./_components/theme-provider";
 
 import "@myapp/ui/globals.css";
+import Link from "next/link";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,6 +30,17 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>
+        <div className="fixed bottom-0 p-2 flex justify-center items-center w-full">
+          <h2 className="text-slate-500">
+            Generated with{" "}
+            <Link
+              href="https://kiln-app.com"
+              className="underline dark:hover:text-slate-400 hover:text-slate-600"
+            >
+              create-kiln-app
+            </Link>
+          </h2>
+        </div>
       </body>
     </html>
   );

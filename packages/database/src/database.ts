@@ -1,4 +1,4 @@
-import { Kysely, PostgresDialect } from "kysely";
+import { Generated, Kysely, PostgresDialect } from "kysely";
 import { Pool } from "pg";
 
 export { sql } from "kysely";
@@ -11,6 +11,11 @@ export type User = {
   image: string | null;
   createdAt: Date;
   updatedAt: Date;
+};
+
+export type UserRole = {
+  user_id: string;
+  role: string;
 };
 
 export type Session = {
@@ -49,11 +54,19 @@ export type Verification = {
   updatedAt: Date | null;
 };
 
+export type Todo = {
+  id: Generated<string>;
+  user_id: string;
+  content: string;
+};
+
 export type Database = {
   user: User;
+  user_role: UserRole;
   session: Session;
   account: Account;
   verification: Verification;
+  todo: Todo;
 };
 
 export function connect() {
