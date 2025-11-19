@@ -21,55 +21,6 @@ importers:
         specifier: 5.8.2
         version: 5.8.2
 
-  apps/docs:
-    dependencies:
-      '@myapp/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
-      dotenv-cli:
-        specifier: ^8.0.0
-        version: 8.0.0
-      lucide-react:
-        specifier: ^0.475.0
-        version: 0.475.0(react@19.2.0)
-      next:
-        specifier: ^15.3.0
-        version: 15.5.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      next-themes:
-        specifier: ^0.4.6
-        version: 0.4.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      react:
-        specifier: ^19.1.0
-        version: 19.2.0
-      react-dom:
-        specifier: ^19.1.0
-        version: 19.2.0(react@19.2.0)
-      sonner:
-        specifier: ^2.0.5
-        version: 2.0.7(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-    devDependencies:
-      '@myapp/eslint-config':
-        specifier: workspace:*
-        version: link:../../packages/eslint-config
-      '@myapp/typescript-config':
-        specifier: workspace:*
-        version: link:../../packages/typescript-config
-      '@types/node':
-        specifier: ^22.15.3
-        version: 22.18.12
-      '@types/pg':
-        specifier: ^8.15.4
-        version: 8.15.5
-      '@types/react':
-        specifier: 19.1.0
-        version: 19.1.0
-      '@types/react-dom':
-        specifier: 19.1.1
-        version: 19.1.1(@types/react@19.1.0)
-      typescript:
-        specifier: 5.8.2
-        version: 5.8.2
-
   apps/web:
     dependencies:
       '@myapp/auth':

@@ -1,9 +1,9 @@
 {
-  "extends": "@myappdeleteme/typescript-config/react-library.json",
+  "extends": "@myapp/typescript-config/react-library.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@myappdeleteme/ui/*": ["./src/*"]
+      "@myapp/ui/*": ["./src/*"]
     }
   },
   "include": ["."],
