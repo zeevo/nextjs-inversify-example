@@ -28,7 +28,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
+          <main className="flex flex-col max-w-2xl mx-auto m-4 gap-4">
+            {children}
+          </main>
         </ThemeProvider>
         <div className="fixed bottom-0 p-2 flex justify-center items-center w-full">
           <h2 className="text-slate-500">

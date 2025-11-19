@@ -6,6 +6,7 @@ import {
 } from "@myapp/services/todo.repository";
 import { TodoService } from "@myapp/services/todo.service";
 import { UserService } from "@myapp/services/user.service";
+import { AuthService } from "@myapp/services/auth.service";
 import { Container } from "inversify";
 import { Kysely, PostgresDialect } from "kysely";
 import { Pool } from "pg";
@@ -26,6 +27,7 @@ const container = new Container({ autobind: true });
 
 container.bind(UserService).toSelf();
 container.bind(TodoService).toSelf();
+container.bind(AuthService).toSelf();
 container.bind(ITodoRepository).to(TodoRepository);
 container.bind(DB).toConstantValue(db);
 

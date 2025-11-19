@@ -1,26 +1,27 @@
-import { injectable } from "inversify";
-import { ITodoRepository } from "./todo.repository";
-import { UserService } from "./user.service";
+import { Database } from "@myapp/database";
+import { inject, injectable } from "inversify";
+import { Kysely } from "kysely";
+import { AuthService } from "./auth.service";
+import { DB } from "./db.service";
 
 @injectable()
 export class TodoService {
   constructor(
-    private userService: UserService,
-    private todoRepository: ITodoRepository
+    private authService: AuthService,
+    @inject(DB) private db: Kysely<Database>
   ) {}
 
-  async createTodo(ownerId: string, content: string) {
-    const roles = await this.userService.getRoles(ownerId);
+  async createTodo(userId: string, content: string) {
+    const hasAccess = await this.authService.hasAccess(userId);
 
-    console.log();
-    if (roles.includes("create_todo")) {
-      return await this.todoRepository.create(ownerId, content);
+    if (hasAccess) {
+      await this.db
+        .insertInto("todo")
+        .values({ content, user_id: userId })
+        .returningAll()
+        .execute();
     }
 
     throw new Error("Forbidden");
-  }
-
-  async getTodos(userId: string) {
-    return await this.todoRepository.getTodos(userId);
   }
 }

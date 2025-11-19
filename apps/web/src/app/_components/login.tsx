@@ -1,8 +1,5 @@
-"use client";
-
 import { authClient } from "@myapp/auth/auth-client";
 import { redirect } from "next/navigation";
-import { toast } from "sonner";
 
 export async function signUp() {
   await authClient.signUp.email(
@@ -17,10 +14,7 @@ export async function signUp() {
         //show loading
       },
       onSuccess: (ctx) => {
-        console.log(ctx.data);
-        toast("Successfully signed up");
         redirect("/");
-        //redirect to the dashboard or sign in page
       },
       onError: (ctx) => {
         // display the error message
@@ -29,14 +23,15 @@ export async function signUp() {
     }
   );
 }
-
-export function SignUp() {
+export function Login() {
   return (
-    <button
-      className="text-2xl hover:underline cursor-pointer"
-      onClick={signUp}
-    >
-      sign up
-    </button>
+    <div className="flex gap-4 text-2xl">
+      <button
+        className="text-2xl hover:underline cursor-pointer"
+        onClick={signUp}
+      >
+        sign up
+      </button>
+    </div>
   );
 }
